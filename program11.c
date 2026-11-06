@@ -1,22 +1,20 @@
-//pattern
 #include<stdio.h>
+void custom_strlen(char  *ptr)
+    {
+     int l=0;
+     while (*ptr!='\0')
+           {
+            l++;
+            ptr++;
+           }
+     printf("length %d", l);
+    }
 int main ()
 {
-int i,j,k;
-    for (i=1;(i<=9);i++)
-      {   if(i==1||i==9)
-           {k=1;}
-         else if (i==2||i==8)
-            {k=2;}
-         else if (i==3||i==7)
-             {k=3;}
-         else if (i==4||i==6)
-             {k=4;}
-         else 
-            {k=5;}
-      for (j=1;(j<=k);j++)
-           {printf("%d", j);}
-       printf("\n");
-      }
+char a[1000],*p;
+fgets(a, sizeof(a), stdin);
+p=a;
+printf("%s\n", a);
+custom_strlen(p);
 return 0;
 }
