@@ -1,20 +1,25 @@
-//Count  vowel and consonants  in a string ...
+//intiail name ..
 #include<stdio.h>
+#include<string.h>
 int main ()
 {
-int c=0,v=0,n;
-char A[n];
-printf("Enter how many charcater you have to print :");
+int n,count=0;
+printf("Enter how many char:");
 scanf("%d", &n);
-for (int i=0;i<n;i++)
-  {scanf("%c", &A[i]);}
-for (int k=0;k<n;k++)
-    { if ( A[k]=='a'||A[k]=='e'||A[k]=='i'||A[k]=='o'||A[k]=='u'||A[k]=='A'||A[k]=='E'||A[k]=='I'||A[k]=='O'||A[k]=='U')
-         {v=v+1;}
-      else 
-         {c=c+1;}
+char a[n+1];
+fgets(a, sizeof(a),stdin);
+int length=strlen(a);
+while (a[length]!=32)
+    {count=count+1;
+     length--;}
+int i=0,j;
+for (;i<=(strlen(a)-count);i++) 
+     {  j=i+1;
+       while  (a[i]==32 && a[j]!=32)
+            {printf("%c",j);}
      }
-printf("The no of  vowel %d\n",c);
-printf("The no of consonants %d",v);
+int s=strlen(a)-count;
+for  (int k=s;k<=strlen(a);k++)
+    {printf("%c" , a[k]);}
 return 0;
 }
